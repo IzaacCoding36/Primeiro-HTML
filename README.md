@@ -1,6 +1,6 @@
 # _Primeiro-HTML_
-Este repositório foi criado para exibir o primeiro arquivo HTML que eu criei.
+**_Este repositório foi criado para exibir o primeiro arquivo HTML que eu criei._**
 
-Confira o arquivo HTML publicado neste repositório para visualizar.
+**_Confira o arquivo HTML publicado neste repositório para visualizar._**
 
 ![](https://media.tenor.com/Pl_4fmL_sf8AAAAi/jojo-star.gif) ;-;
