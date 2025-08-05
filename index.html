@@ -1,27 +1,209 @@
 <!DOCTYPE html>
 <html lang="pt-br">
- <head>
-  <meta charset="UTF-8">
-  <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
-  <title>olha isso lol</title>
- </head>
- <body align = "center">
-  <center>
-  <h2>
-  <a href = "https://m.youtube.com/watch?v=xvFZjo5PgG0">veja como esse jogo é legal
-  <img src = "https://i.pinimg.com/originals/0d/3d/fc/0d3dfcc1267cf1616ef4cc19064e01a3.gif">
-  </h2>
-  <h1>clique aqui para ver</h1></a>
-  </center>
- </body>
- <style>
-body {background: black;
-      background-repeat: no-repeat;
-      background-color: black;}
-a {color: white; text-decoration: none; text-shadow: 0px 0px 15px lime;}
-img {width: 80%; height: 80%;
-     box-shadow: 0px 0px 15px lime;
-     border-radius: 50px;}
-h1 {color: white; text-shadow: 0px 0px 15px lime;}
- </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Incrível Jogo Online - Clique para Jogar!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .title {
+            color: #00ff00;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        .game-preview {
+            position: relative;
+            margin: 40px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .game-preview:hover {
+            transform: scale(1.05);
+        }
+
+        .placeholder-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: linear-gradient(45deg, #001100, #003300, #001100);
+            border-radius: 20px;
+            border: 3px solid #00ff00;
+            box-shadow: 0 0 30px #00ff00, 0 0 60px rgba(0, 255, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .placeholder-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 0, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .game-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .game-text {
+            color: #00ff00;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #00aa00, #00ff00, #00aa00);
+            color: #000;
+            font-size: 1.8rem;
+            font-weight: bold;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.7);
+            background: linear-gradient(45deg, #00ff00, #44ff44, #00ff00);
+        }
+
+        .features {
+            margin-top: 30px;
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .feature-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #00ff00;
+        }
+
+        .warning {
+            color: #ff6600;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00; }
+            50% { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .placeholder-image {
+                height: 300px;
+            }
+            
+            .cta-button {
+                font-size: 1.4rem;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🎮 NOVO JOGO INCRÍVEL DESCOBERTO!</h1>
+        
+        <a href="https://m.youtube.com/watch?v=xvFZjo5PgG0" class="game-link">
+            <div class="game-preview">
+                <div class="placeholder-image">
+                    <div class="game-icon">🎮</div>
+                    <div class="game-text">PREVIEW DO JOGO</div>
+                </div>
+            </div>
+        </a>
+
+        <div class="features">
+            <h3>Por que você vai AMAR este jogo:</h3>
+            <ul class="feature-list">
+                <li>🔥 Gráficos impressionantes que vão te surpreender</li>
+                <li>🎵 Trilha sonora épica e inesquecível</li>
+                <li>⚡ Jogabilidade viciante e única</li>
+                <li>🏆 Experiência que você NUNCA vai esquecer</li>
+            </ul>
+        </div>
+
+        <a href="https://m.youtube.com/watch?v=xvFZjo5PgG0" class="cta-button">
+            ▶️ JOGAR AGORA - GRÁTIS!
+        </a>
+
+        <p class="warning">⚠️ Atenção: Este jogo pode ser EXTREMAMENTE viciante!</p>
+    </div>
+</body>
 </html>
